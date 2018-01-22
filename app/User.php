@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * A user can have many messages
+     * A user can have many messages.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

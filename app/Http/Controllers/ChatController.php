@@ -12,7 +12,7 @@ class ChatController extends Controller
      * Status message.
      */
     const MESSAGE_SENT = 'Message Sent!';
-    
+
     /**
      * ChatConrtoller constructor.
      */
@@ -45,17 +45,18 @@ class ChatController extends Controller
      * Persist message to db.
      *
      * @param Request $request
+     *
      * @return array
      */
     public function sendMessage(Request $request)
     {
         $user = auth()->user();
         $message = $user->messages()->create([
-            'message' => $request->input('message') 
+            'message' => $request->input('message'),
         ]);
 
         broadcast(new MessageSent($user, $message))->toOthers();
-        
+
         return ['status' => self::MESSAGE_SENT];
     }
 }

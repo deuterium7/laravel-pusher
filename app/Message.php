@@ -11,10 +11,10 @@ class Message extends Model
      *
      * @var array
      */
-    protected $fillable  = ['message'];
+    protected $fillable = ['message'];
 
     /**
-     * A message belong to a user
+     * A message belong to a user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
